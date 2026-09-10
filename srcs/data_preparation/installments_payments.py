@@ -20,10 +20,10 @@ class InstallmentPaymentPrepare:
         self.df['DAYS_PAYMENT_DIFF'] = self.df['DAYS_INSTALMENT'] - self.df['DAYS_ENTRY_PAYMENT']
         self.df['AMT_PAYMENT_RATIO'] = self.df['AMT_PAYMENT'] / (self.df['AMT_INSTALMENT'] + 1e-5)
         self.df['AMT_PAYMENT_DIFF'] = self.df['AMT_INSTALMENT'] - self.df['AMT_PAYMENT']
-        self.df['EXP_DAYS_PAYMENT_RATIO'] = self.df['DAYS_PAYMENT_RATIO'].transform(lambda x: x.ewm(alpha=0.5).mean())
-        self.df['EXP_DAYS_PAYMENT_DIFF'] = self.df['DAYS_PAYMENT_DIFF'].transform(lambda x: x.ewm(alpha=0.5).mean())
-        self.df['EXP_AMT_PAYMENT_RATIO'] = self.df['AMT_PAYMENT_RATIO'].transform(lambda x: x.ewm(alpha=0.5).mean())
-        self.df['EXP_AMT_PAYMENT_DIFF'] = self.df['AMT_PAYMENT_DIFF'].transform(lambda x: x.ewm(alpha=0.5).mean())
+        self.df['EXP_DAYS_PAYMENT_RATIO'] = self.df.groupby('SK_ID_PREV')['DAYS_PAYMENT_RATIO'].transform(lambda x: x.ewm(alpha=0.5).mean())
+        self.df['EXP_DAYS_PAYMENT_DIFF'] = self.df.groupby('SK_ID_PREV')['DAYS_PAYMENT_DIFF'].transform(lambda x: x.ewm(alpha=0.5).mean())
+        self.df['EXP_AMT_PAYMENT_RATIO'] = self.df.groupby('SK_ID_PREV')['AMT_PAYMENT_RATIO'].transform(lambda x: x.ewm(alpha=0.5).mean())
+        self.df['EXP_AMT_PAYMENT_DIFF'] = self.df.groupby('SK_ID_PREV')['AMT_PAYMENT_DIFF'].transform(lambda x: x.ewm(alpha=0.5).mean())
 
     def aggregation_prev_instalment(self):
         """
@@ -65,7 +65,7 @@ class InstallmentPaymentPrepare:
         last_1_year = self.df[self.df['DAYS_INSTALMENT'] > -365].groupby('SK_ID_PREV').agg(limited_period_aggregations)
         last_1_year.columns = ['_'.join(i).upper() + '_LAST_1_YEAR' for i in last_1_year.columns]
         first_5_instalments = self.df.groupby('SK_ID_PREV', as_index=False).head(5).groupby('SK_ID_PREV').agg(limited_period_aggregations)
-        first_5_instalments.columns = ['_'.join(i).upper() + '_FIRST_5_YEARS' for i in first_5_instalments.columns]
+        first_5_instalments.columns = ['_'.join(i).upper() + '_FIRST_5_INSTALMENTS' for i in first_5_instalments.columns]
         overall = self.df.groupby(['SK_ID_PREV', 'SK_ID_CURR'], as_index=False).agg(overall_aggreagations)
         overall.columns = ['_'.join(i).upper() for i in overall.columns]
         overall.rename(columns={'SK_ID_PREV_': 'SK_ID_PREV', 'SK_ID_CURR_': 'SK_ID_CURR'}, inplace=True)

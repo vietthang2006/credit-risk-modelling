@@ -133,8 +133,16 @@ class PreviousApplicationPrepare:
 
         return previous_application_aggregated
 
+    def transform_dtype(self, data: pd.DataFrame):
+         # Transform dtypes
+        cate_cols = data.select_dtypes(include=['object', 'str']).columns
+        data[cate_cols] = data[cate_cols].astype('category')
+        return data
+        
+
     def main(self):
         self.data_cleaning()
         self.feature_engineering()
         df = self.aggregation()
+        df = self.transform_dtype(df)
         return df

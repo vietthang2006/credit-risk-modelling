@@ -4,6 +4,9 @@ Home Credit Dataset/raw/
 # Intermediate / generated data
 Home Credit Dataset/interim/
 
+# Modelling
+Home Credit Dataset/modelling/
+
 # Python cache
 __pycache__/
 *.py[cod]

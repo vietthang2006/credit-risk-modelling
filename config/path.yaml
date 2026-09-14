@@ -2,10 +2,17 @@
 data_dir: "Home Credit Dataset"
 
 dirs:
+  # Raw
   raw: "raw"
+
+  # Intermediate
   train: "interim/train"
   test: "interim/test"
 
+  # Modelling data
+  modelling_train: "modelling/train"
+  modelling_test: "modelling/test"
+  
 files:
   application: "application_train.csv"
   bureau: "bureau.csv"

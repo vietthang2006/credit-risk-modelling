@@ -18,7 +18,8 @@ class Config:
         self.raw_dir = self.data_dir / self.data["dirs"]["raw"]
         self.train_dir = self.data_dir / self.data["dirs"]["train"]
         self.test_dir = self.data_dir / self.data["dirs"]["test"]
-
+        self.modelling_train_dir = self.data_dir / self.data["dirs"]["modelling_train"]
+        self.modelling_test_dir = self.data_dir / self.data["dirs"]["modelling_test"]
         self._files = self.data.get("files", {})
 
     def get_raw(self, file_key: str) -> Path:
@@ -41,5 +42,17 @@ class Config:
             filename = filename.replace(".csv", "_test.csv")
 
         return self.test_dir / filename
+
+    def get_modelling_train(self, file_key: str) -> Path:
+        filename = self._files.get(file_key, f"{file_key}.csv")
+        if file_key == "application":
+            filename = "application.csv"
+        filename = filename.replace(".csv", "_train.csv")
+        return self.modelling_train_dir / filename
+
+    def get_modelling_valid(self, file_key: str) -> Path:
+        filename = self._files.get(file_key, f"{file_key}.csv")
+        filename = filename.replace(".csv","_valid.csv")
+        return self.modelling_test_dir / filename
     
 cfg = Config()

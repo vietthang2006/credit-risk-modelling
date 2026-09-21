@@ -20,7 +20,27 @@ class Config:
         self.test_dir = self.data_dir / self.data["dirs"]["test"]
         self.modelling_train_dir = self.data_dir / self.data["dirs"]["modelling_train"]
         self.modelling_test_dir = self.data_dir / self.data["dirs"]["modelling_test"]
+
+        # Processed
+        self.processed_train_dir = self.data_dir / self.data['dirs']['processed_train']
+        self.processed_test_dir = self.data_dir / self.data['dirs']['processed_test']
+        self.processed_valid_dir = self.data_dir / self.data['dirs']['processed_valid']
+
         self._files = self.data.get("files", {})
+
+    # Processed data
+    def get_processed_train(self, file_key: str) -> Path:
+        filename = self._files.get(file_key, f"{file_key}.csv")
+        return self.processed_train_dir / filename
+    
+    def get_processed_valid(self, file_key: str) -> Path:
+        filename = self._files.get(file_key, f"{file_key}.csv")
+        return self.processed_valid_dir / filename
+
+    def get_processed_test(self, file_key: str) -> Path:
+            filename = self._files.get(file_key, f"{file_key}.csv")
+            return self.processed_test_dir / filename
+    
 
     def get_raw(self, file_key: str) -> Path:
         filename = self._files.get(file_key, f"{file_key}.csv")
@@ -36,23 +56,14 @@ class Config:
         if file_key == "columns_description": 
             pass
         filename = self._files.get(file_key, f"{file_key}.csv")
-        if file_key == "application":
-            filename = "application_train_test.csv"
-        elif not filename.endswith("_test.csv"):
-            filename = filename.replace(".csv", "_test.csv")
-
         return self.test_dir / filename
 
     def get_modelling_train(self, file_key: str) -> Path:
         filename = self._files.get(file_key, f"{file_key}.csv")
-        if file_key == "application":
-            filename = "application.csv"
-        filename = filename.replace(".csv", "_train.csv")
         return self.modelling_train_dir / filename
 
     def get_modelling_valid(self, file_key: str) -> Path:
         filename = self._files.get(file_key, f"{file_key}.csv")
-        filename = filename.replace(".csv","_valid.csv")
         return self.modelling_test_dir / filename
     
 cfg = Config()

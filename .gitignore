@@ -7,6 +7,9 @@ Home Credit Dataset/interim/
 # Modelling
 Home Credit Dataset/modelling/
 
+# Processed
+Home Credit Dataset/processed/
+
 # Python cache
 __pycache__/
 *.py[cod]
@@ -20,3 +23,7 @@ __pycache__/
 # OS
 Thumbs.db
 .DS_Store
+
+# Cache
+.uv-cache
+.uv-python

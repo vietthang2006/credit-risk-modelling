@@ -10,6 +10,9 @@ Home Credit Dataset/modelling/
 # Processed
 Home Credit Dataset/processed/
 
+# CV
+Home Credit Dataset/cv/
+
 # Python cache
 __pycache__/
 *.py[cod]

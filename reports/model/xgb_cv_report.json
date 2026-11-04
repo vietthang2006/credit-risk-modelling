@@ -1,0 +1,126 @@
+{
+  "trials": [
+    {
+      "trial": 1,
+      "params": {
+        "selector__top_k": 400,
+        "model__subsample": 1.0,
+        "model__n_estimators": 500,
+        "model__max_depth": 7,
+        "model__learning_rate": 0.1,
+        "model__colsample_bytree": 0.8
+      },
+      "folds": [],
+      "mean_metrics": {
+        "roc_auc": NaN,
+        "f1": NaN,
+        "precision": NaN,
+        "recall": NaN,
+        "average_precision": NaN,
+        "ks": NaN
+      }
+    },
+    {
+      "trial": 2,
+      "params": {
+        "selector__top_k": 200,
+        "model__subsample": 0.8,
+        "model__n_estimators": 200,
+        "model__max_depth": 5,
+        "model__learning_rate": 0.1,
+        "model__colsample_bytree": 0.8
+      },
+      "folds": [],
+      "mean_metrics": {
+        "roc_auc": NaN,
+        "f1": NaN,
+        "precision": NaN,
+        "recall": NaN,
+        "average_precision": NaN,
+        "ks": NaN
+      }
+    },
+    {
+      "trial": 3,
+      "params": {
+        "selector__top_k": 400,
+        "model__subsample": 1.0,
+        "model__n_estimators": 200,
+        "model__max_depth": 7,
+        "model__learning_rate": 0.05,
+        "model__colsample_bytree": 0.8
+      },
+      "folds": [],
+      "mean_metrics": {
+        "roc_auc": NaN,
+        "f1": NaN,
+        "precision": NaN,
+        "recall": NaN,
+        "average_precision": NaN,
+        "ks": NaN
+      }
+    },
+    {
+      "trial": 4,
+      "params": {
+        "selector__top_k": 400,
+        "model__subsample": 1.0,
+        "model__n_estimators": 500,
+        "model__max_depth": 10,
+        "model__learning_rate": 0.05,
+        "model__colsample_bytree": 0.8
+      },
+      "folds": [],
+      "mean_metrics": {
+        "roc_auc": NaN,
+        "f1": NaN,
+        "precision": NaN,
+        "recall": NaN,
+        "average_precision": NaN,
+        "ks": NaN
+      }
+    },
+    {
+      "trial": 5,
+      "params": {
+        "selector__top_k": 200,
+        "model__subsample": 1.0,
+        "model__n_estimators": 200,
+        "model__max_depth": 3,
+        "model__learning_rate": 0.1,
+        "model__colsample_bytree": 1.0
+      },
+      "folds": [],
+      "mean_metrics": {
+        "roc_auc": NaN,
+        "f1": NaN,
+        "precision": NaN,
+        "recall": NaN,
+        "average_precision": NaN,
+        "ks": NaN
+      }
+    }
+  ],
+  "best": {
+    "model_name": "xgb",
+    "best_params": {
+      "selector__top_k": 400,
+      "model__subsample": 1.0,
+      "model__n_estimators": 500,
+      "model__max_depth": 7,
+      "model__learning_rate": 0.1,
+      "model__colsample_bytree": 0.8
+    },
+    "best_cv_metrics": {
+      "roc_auc": NaN,
+      "f1": NaN,
+      "precision": NaN,
+      "recall": NaN,
+      "average_precision": NaN,
+      "ks": NaN
+    },
+    "selection_metric": "roc_auc",
+    "random_state": 42,
+    "n_splits": 0
+  }
+}

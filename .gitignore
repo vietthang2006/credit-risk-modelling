@@ -16,17 +16,30 @@ Home Credit Dataset/cv/
 # Python cache
 __pycache__/
 *.py[cod]
+*$py.class
 
 # Jupyter
 .ipynb_checkpoints/
 
-# VS Code
+# VS Code & IDEs
 .vscode/
+.idea/
 
 # OS
 Thumbs.db
 .DS_Store
 
-# Cache
-.uv-cache
-.uv-python
+# Virtualenv & Cache
+.uv-cache/
+.uv-python/
+.pytest_cache/
+*.log
+.env
+
+# Model artifacts & serialized weights (prevent git bloat)
+*.joblib
+*.pkl
+*.pickle
+*.model
+*.onnx
+config/model/*.joblib

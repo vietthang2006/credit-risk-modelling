@@ -13,8 +13,13 @@ dirs:
   modelling_train: "modelling/train"
   modelling_test: "modelling/test"
   
+  # Processed
+  processed_train: "processed/train"
+  processed_test: "processed/test"
+  processed_valid: "processed/valid"
+
 files:
-  application: "application_train.csv"
+  application: "application.csv"
   bureau: "bureau.csv"
   bureau_balance: "bureau_balance.csv"
   credit_card_balance: "credit_card_balance.csv"
@@ -22,3 +27,4 @@ files:
   pos_cash_balance: "POS_CASH_balance.csv"
   previous_application: "previous_application.csv"
   columns_description: "HomeCredit_columns_description.csv"
+  main_table: "main_table.csv"

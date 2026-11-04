@@ -1,0 +1,21 @@
+Feature,Mean_Abs_SHAP,Rank,Business_Impact
+EXT_SOURCE_1,0.62,1,Higher value decreases Default Risk (-)
+EXT_SOURCE_MEAN,0.465,2,Higher value decreases Default Risk (-)
+DAYS_BIRTH,0.3871,3,Higher value increases Default Risk (+)
+EXT_SOURCE_3,0.1877,4,Higher value decreases Default Risk (-)
+MISSING_TOTAL,0.1467,5,Higher value decreases Default Risk (-)
+EXPECTED_INTEREST_SHARE,0.1374,6,Higher value increases Default Risk (+)
+AGE_EMPLOYED_DIFF,0.0753,7,Higher value increases Default Risk (+)
+CURRENCY_currency 1_MEAN_OVERALL,0.074,8,Non-linear / Complex
+AMT_ANNUITY,0.0735,9,Higher value increases Default Risk (+)
+NAME_YIELD_GROUP_LAST_LAST_5,0.0675,10,Non-linear / Complex
+DAYS_CREDIT_MEAN_OVERALL,0.0653,11,Non-linear / Complex
+ORGANIZATION_TYPE,0.0619,12,Higher value decreases Default Risk (-)
+EXT_SOURCE_1_MAX_AGG_CODE_GENDER_NAME_FAMILY_STATUS_NAME_INCOME_TYPE,0.0588,13,Higher value decreases Default Risk (-)
+WEIGHTED_EXT_SOURCE,0.0506,14,Higher value decreases Default Risk (-)
+REGION_POPULATION_RELATIVE,0.0505,15,Higher value increases Default Risk (+)
+CURRENT_DEBT_TO_CREDIT_RATIO_MEAN_OVERALL,0.0494,16,Non-linear / Complex
+EXP_AMT_PAYMENT_DIFF_LAST,0.0479,17,Non-linear / Complex
+EXT_SOURCE_2,0.0476,18,Higher value decreases Default Risk (-)
+AMT_PAYMENT_SUM_LAST_1_YEAR,0.0433,19,Non-linear / Complex
+AMT_PAYMENT_MEAN_FIRST_5_INSTALMENTS,0.0422,20,Non-linear / Complex

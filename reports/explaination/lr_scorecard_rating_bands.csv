@@ -1,0 +1,6 @@
+tier,Total,Bad_Count,Population_Pct,Good_Count,Default_Rate (PD),Cum_Bad_Pct,Cum_Good_Pct,KS_Separation
+Tier E: Very High Risk (<580),18484,3520,30.05%,14964,19.04%,70.9,26.47,44.43
+Tier D: High Risk (580-639),42326,1440,68.82%,40886,3.4%,99.9,98.78,1.12
+Tier C: Medium Risk (640-699),691,4,1.12%,687,0.58%,99.98,100.0,0.02
+Tier B: Low Risk (700-749),0,0,0.0%,0,,99.98,100.0,0.02
+Tier A: Prime (750+),1,1,0.0%,0,100.0%,100.0,100.0,0.0
